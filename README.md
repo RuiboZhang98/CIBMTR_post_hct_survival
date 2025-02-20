@@ -8,4 +8,4 @@ Ruibo Zhang, Chi-Hao Wu, Yang Li, Ray Karpman, Elzbieta Polak
 
 ## Dataset description
 
-Please refer to this [google doc](https://docs.google.com/document/d/1kk4Rym6FYjPDXt6weWp9CQHLJprUmqq-LM3-46bOarc/edit?usp=sharing) or the [Markdown file](DatasetDescription.md).
+Please refer to this [google doc](https://docs.google.com/document/d/1kk4Rym6FYjPDXt6weWp9CQHLJprUmqq-LM3-46bOarc/edit?usp=sharing) or this [Markdown file](DatasetDescription.md).
