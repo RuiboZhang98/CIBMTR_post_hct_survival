@@ -4,7 +4,7 @@ Collaboration to improve prediction of transplant survival rates equitably for a
 
 ## Team Members
 
-Ruibo Zhang, Chi-Hao Wu, Yang Li, Ray Karpman, Elzbieta Polak
+Ruibo Zhang, Chi-Hao Wu, Yang Li, [Ray Karpman](https://www.linkedin.com/in/rachel-karpman/), Elzbieta Polak
 
 ## Dataset description
 
