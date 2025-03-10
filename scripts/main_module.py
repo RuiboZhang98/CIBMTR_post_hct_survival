@@ -31,3 +31,33 @@ class hct:
             assert isinstance(params,int), "in rdrop, params has to be a single integer"
             self.data.dropna(thresh=self.raw_data.keys().size-params, inplace=True)
                 
+    def impute(self, features, target):
+        # split the data according whether the target feature is missing
+
+        X = pd.get_dummies(self.data.dropna(subset=features)[features])
+
+        y = self.data.loc[X.index][target]
+
+        y_train = y.dropna().apply(str)
+
+        X_train = X.loc[y_train.index]
+
+        X_test  = X.loc[y.isna()]
+
+        # train the logistic regression predictor 
+    
+        model = LogisticRegression(multi_class='multinomial', solver='lbfgs') # For multiclass target
+        
+        model.fit(X_train, y_train)
+     
+        # impute the data
+        
+        y_pred = model.predict(X_test)
+        
+        if self.data.dtypes[target] == 'float64':
+            print("float activated")
+            self.data.loc[X_test.index, [target]] = list(map(float, y_pred))
+        else:
+            print("str activated")
+            self.data.loc[X_test.index, [target]] = y_pred
+
