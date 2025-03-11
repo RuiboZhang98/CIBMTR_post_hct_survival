@@ -44,20 +44,20 @@ class hct:
 
         X_test  = X.loc[y.isna()]
 
-        # train the logistic regression predictor 
+        if (X_train.shape[0] > 0) and (X_test.shape[0] > 0):
+
+            # train the logistic regression predictor 
     
-        model = LogisticRegression(multi_class='multinomial', solver='lbfgs') # For multiclass target
+            model = LogisticRegression(multi_class='multinomial', solver='lbfgs') # For multiclass target
         
-        model.fit(X_train, y_train)
+            model.fit(X_train, y_train)
      
-        # impute the data
+            # impute the data
         
-        y_pred = model.predict(X_test)
+            y_pred = model.predict(X_test)
         
-        if self.data.dtypes[target] == 'float64':
-            print("float activated")
-            self.data.loc[X_test.index, [target]] = list(map(float, y_pred))
-        else:
-            print("str activated")
-            self.data.loc[X_test.index, [target]] = y_pred
+            if self.data.dtypes[target] == 'float64':
+                self.data.loc[X_test.index, [target]] = list(map(float, y_pred))
+            else:
+                self.data.loc[X_test.index, [target]] = y_pred
 
