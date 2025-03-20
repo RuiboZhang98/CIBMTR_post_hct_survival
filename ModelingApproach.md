@@ -21,10 +21,11 @@ We will try two primary families of algorithms.
 
 #### Other Considerations
 
-In addition to fitting multiple models, we will consider:
-* Different methods of imputing missing data. 
-** Train a predictive model to impute missing values
+In addition to fitting multiple models, we experiment with the following:
+* Different methods of imputing missing data.      
+    * Train predictive model to impute missing values
+    * Try `IterativeImputer` from `scikit-learn`.
 * Feature Selection and Engineering
-** Try dropping some highly-correlated features
-** Try dropping low-variance features, or binning low-variance features together
+    * Try dropping some highly-correlated features
+    * Try dropping low-variance features, or binning low-variance features together
 
