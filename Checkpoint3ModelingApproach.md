@@ -14,26 +14,27 @@ We will try two primary families of algorithms.
 
 #### Cox Proportional Hazard Model (CPH)
 
-* It is a parametric model on $h(t)$. 
-    * E.g. assumes that the *log-hazard* function of an individual is linear in the model features.
+* It is a parametric model on $h(t)$.
+  * E.g. assumes that the *log-hazard* function of an individual is linear in the model features.
 * Simple and interpretable, and will serve as a baseline.
 * Implemented in both `xgboost` and `lifelines`.
 
 #### Accelerated Failure Time Model (AFT)
 
 * It is a parametric mode on $S(t)$.
-    * E.g. assumes that $\log(S(t)) = \theta \dot p + Z$ in which $theta$ is a vector of parameters, $p$ is a vector of features, and $Z$ is a noise term.
-*  It has more degree of freedom in terms of modeling.
-    * $Z$ can be choose from Normal, Wellbull, etc.
+  * E.g. assumes that $\log(S(t)) = \theta \cdot p + Z$ in which $theta$ is a vector of parameters, $p$ is a vector of features, and $Z$ is a noise term.
+* It has more degree of freedom in terms of modeling.
+  * $Z$ can be choose from Normal, Wellbull, etc.
 
 In addition, these two class of models have their tree-based alteratives.
+
 #### Tree-Based Models
 
 * Ensemble models based on decisions trees often perform well on tabular data.
-    * A decision tree is a parameteric map $\Gamma(\theta,p)$ 
+  * A decision tree is a parameteric map $\Gamma(\theta,p)$ that encodes parts of the model.
 * Specialized versions of these models have been developed for survival data.
-    * For CPH model, this means $\log(h(t)) = \Gamma(\theta,p)$. (Ruibo: Not entirely sure if this is true.)
-    * For AFT model, this means $\log(S(t)) = \Gamma(\theta,p) + Z$
+  * For CPH model, this means $\log(h(t)) = \Gamma(\theta,p)$. (Ruibo: Not entirely sure if this is true.)
+  * For AFT model, this means $\log(S(t)) = \Gamma(\theta,p) + Z$
 * Implemented in `scikit-survival` library.
 
 #### Other Considerations
