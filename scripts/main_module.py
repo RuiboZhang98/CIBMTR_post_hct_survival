@@ -62,8 +62,13 @@ class hct:
             if mod == 'missing':
                 data_cleaned.loc[:,cat_columns] = data_cleaned[cat_columns].replace(target_values, 'missing')
                 data_cleaned.loc[:,cat_columns] = data_cleaned[cat_columns].fillna('missing')
-                # num_columns = data_cleaned.select_dtypes(include = ['float64']).columns
-                # data_cleaned.loc[:, num_columns] = data_cleaned[num_columns].fillna(-1.0)
+                num_columns = data_cleaned.select_dtypes(include = ['float64']).columns
+                data_cleaned.loc[:, num_columns] = data_cleaned[num_columns].fillna(-1.0)
+                return data_cleaned
+            
+            if mod == 'missing_cat':
+                data_cleaned.loc[:,cat_columns] = data_cleaned[cat_columns].replace(target_values, 'missing')
+                data_cleaned.loc[:,cat_columns] = data_cleaned[cat_columns].fillna('missing')
                 return data_cleaned
             
     def report_missing_values(self, df, label1 = 'Feature', label2 = 'Percentage Missing'):
