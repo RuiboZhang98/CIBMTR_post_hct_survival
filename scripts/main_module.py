@@ -36,6 +36,7 @@ class hct:
             assert isinstance(params,int), "in rdrop, params has to be a single integer"
             return self.data.dropna(thresh=self.data.keys().size-params)
                 
+
         if method == "replace":
             # identify all entries that takes values in the list {params[0]} as missing values
             # params[1] present two possible options
@@ -75,34 +76,6 @@ class hct:
         # adapted from the implemention by Ray
         return pd.DataFrame(df.isna().sum()/df.shape[0] * 100).reset_index()\
         .rename(columns={"index":label1, 0:label2}).sort_values(by=label2, ascending=False)
-    def impute(self, features, target):
-        # split the data according whether the target feature is missing
 
-        X = pd.get_dummies(self.data.dropna(subset=features)[features])
-
-        y = self.data.loc[X.index][target]
-
-        y_train = y.dropna().apply(str)
-
-        X_train = X.loc[y_train.index]
-
-        X_test  = X.loc[y.isna()]
-
-        if (X_train.shape[0] > 0) and (X_test.shape[0] > 0):
-
-            # train the logistic regression predictor 
-    
-            model = LogisticRegression(multi_class='multinomial', solver='lbfgs') # For multiclass target
-        
-            model.fit(X_train, y_train)
-     
-            # impute the data
-        
-            y_pred = model.predict(X_test)
-        
-            if self.data.dtypes[target] == 'float64':
-                self.data.loc[X_test.index, [target]] = list(map(float, y_pred))
-            else:
-                self.data.loc[X_test.index, [target]] = y_pred
 
 
