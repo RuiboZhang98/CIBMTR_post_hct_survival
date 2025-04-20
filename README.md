@@ -17,7 +17,7 @@ Please refer to this [google doc](https://docs.google.com/document/d/1kk4Rym6FYj
 
 ### Checkpoint 2: EDA and data preprocessing
 
-Please refer to [this document](Checkpoint2EDADataCleaning.ipynb). Additional plots can be found in the notebooks [univarate analysis](scripts/univariate_distributions_revised.ipynb) and [pairwise analysis](scripts/correlations_for_checkpoint.ipynb). 
+Please refer to [this document](Checkpoint2EDADataCleaning.ipynb). The [scripts](/scripts) directory contains notebooks with our full [univariate analysis](scripts/univariate_distributions_revised.ipynb) and [pairwise analysis](scripts/correlations_for_checkpoint.ipynb). 
 
 ### Checkpoint 3: Modeling approach
 
@@ -30,8 +30,8 @@ Please see [this document](Checkpoint3ModelingApproach.md) for an overview of ou
 The root directory of this repo contains four notebooks, containing our code for model selection and evaluation.
 * [model_comparison.ipynb](model_comparison.ipynb) contains our model-selection process. Each potential model is evaluated using five-fold cross-validation on the [training set](data/train_set.csv). 
 * [implementation.ipynb](implementation.ipynb) contains helper functions for creating and fitting pipelines and models.
-* [model_comparison_test_naive.ipynb](model_comparison_test_naive.ipynb) is a script for testing each model we considered on the [test data](data/test_validation_set.csv), using a simple pre-processing pipeline which imputes -1 for missing values.
-* [model_comparison_test_tuned.ipynb](model_comparison_test_tuned.ipynb) is a script for testing each model we considered on the test data, using a more complex pre-processing pipeline which uses KNN imputation and scales numerical variables.
+* [model_comparison_test_naive.ipynb](model_comparison_test_naive.ipynb) is a script for testing each model we considered on the [test data](data/test_validation_set.csv), using a simple preprocessing pipeline which imputes -1 for missing values.
+* [model_comparison_test_tuned.ipynb](model_comparison_test_tuned.ipynb) is a script for testing each model we considered on the test data, using a more complex preprocessing pipeline which uses KNN imputation and scales numerical variables.
 
 Note: we selected a modeling approach based on cross-validation on the training set, before evaluating any model on the test set. The final metrics reported for this project are based on this chosen approach--not on the approach that performed best on test data!
 
@@ -49,7 +49,7 @@ We assigned 80% of the data for training, and 20% for testing.
 The [examples](/examples) directory contains scripts for various utility functions, including the following.
 
 * [data_train_test_split.ipynb](examples/data_train_test_split.ipynb) was used to split our data into train and test sets.
-* [concordance_index.ipynb](examples/concordance_index.ipynb) is a helper script provided on kaggle which evaluates predictions using the stratified concordance index, a specialized evaluation metric.
+* [concordance_index.ipynb](examples/concordance_index.ipynb) is a helper script provided on Kaggle which evaluates predictions using the stratified concordance index, a specialized evaluation metric.
 
 ### Scripts Directory
 
