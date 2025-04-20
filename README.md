@@ -17,7 +17,7 @@ Please refer to this [google doc](https://docs.google.com/document/d/1kk4Rym6FYj
 
 ### Checkpoint 2: EDA and data preprocessing
 
-Please refer to [this document](Checkpoint2EDADataCleaning.ipynb). For additional splots, see our notebook containing [univariate analysis](scripts/univariate_distributions_revised.ipynb) and [pairwise analysis](scripts/correlations_for_checkpoint.ipynb). 
+Please refer to [this document](Checkpoint2EDADataCleaning.ipynb). The [scripts](/scripts) directory contains notebooks with our full [univariate analysis](scripts/univariate_distributions_revised.ipynb) and [pairwise analysis](scripts/correlations_for_checkpoint.ipynb). 
 
 ### Checkpoint 3: Modeling approach
 
