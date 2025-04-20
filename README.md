@@ -17,13 +17,13 @@ Please refer to this [google doc](https://docs.google.com/document/d/1kk4Rym6FYj
 
 ### Checkpoint 2: EDA and data preprocessing
 
-Please refer to [this document](Checkpoint1DatasetDescription.md). Additional plots can be found in the notebooks [univarate analysis](scripts/univariate_distributions_revised.ipynb) and [pairwise analysis](scripts/correlations_for_checkpoint.ipynb). 
+Please refer to [this document](Checkpoint2EDADataCleaning.ipynb). Additional plots can be found in the notebooks [univarate analysis](scripts/univariate_distributions_revised.ipynb) and [pairwise analysis](scripts/correlations_for_checkpoint.ipynb). 
 
 ### Checkpoint 3: Modeling approach
 
 Please see [this document](Checkpoint3ModelingApproach.md) for an overview of our modeling approach. 
 
-## Repository Contents
+## Repository Organization
 
 ### Root Directory
 
