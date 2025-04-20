@@ -30,7 +30,7 @@ Please see [this document](Checkpoint3ModelingApproach.md) for an overview of ou
 The root directory of this repo contains four notebooks, containing our code for model selection and evaluation.
 * [model_comparison.ipynb](model_comparison.ipynb) contains our model-selection process. Each potential model is evaluated using five-fold cross-validation on the [training set](data/train_set.csv). 
 * [implementation.ipynb](implementation.ipynb) contains helper functions for creating and fitting pipelines and models.
-* [model_comparison_test_naive.ipynb](model_comparison_test_naive.ipynb) is a script for testing each model we considered on the [test data](data/test_validation_set.csv), using a simple preprocessing pipeline which imputes -1 for missing values.
+* [model_comparison_test_naive.ipynb](model_comparison_test_naive.ipynb) is a script for testing each model we considered on the [test data](data/test_validation_set.csv), using a simple preprocessing pipeline which imputes -1 for missing numerical values and "missing" string for missing categorical values.
 * [model_comparison_test_tuned.ipynb](model_comparison_test_tuned.ipynb) is a script for testing each model we considered on the test data, using a more complex preprocessing pipeline which uses KNN imputation and scales numerical variables.
 
 Note: we selected a modeling approach based on cross-validation on the training set, before evaluating any model on the test set. The final metrics reported for this project are based on this chosen approach--not on the approach that performed best on test data!
