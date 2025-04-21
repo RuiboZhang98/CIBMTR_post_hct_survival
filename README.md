@@ -11,24 +11,32 @@ Collaboration to improve prediction of transplant survival rates equitably for a
 Please see [this google doc](https://docs.google.com/document/d/1mQpeUD_LRBRP4hCrkkFXRa48OGYRKUpNPlSAw4oAM6Q/edit?usp=sharing) for a brief summary of our project.
 
 ## Project Checkpoints
+
 ### Checkpoint 1: Dataset description
+
+<img src="figs/Fig1_Dataset.png" alt="Description"  width="450">
 
 Please refer to this [google doc](https://docs.google.com/document/d/1kk4Rym6FYjPDXt6weWp9CQHLJprUmqq-LM3-46bOarc/edit?usp=sharing) or this [markdown file](Checkpoint1DatasetDescription.md).
 
 ### Checkpoint 2: EDA and data preprocessing
 
-Please refer to [this document](Checkpoint2EDADataCleaning.ipynb). The [scripts](/scripts) directory contains notebooks with our full [univariate analysis](scripts/univariate_distributions_revised.ipynb) and [pairwise analysis](scripts/correlations_for_checkpoint.ipynb). 
+<img src="figs/Fig2_Preproc.png" width="450">
+
+Please refer to [this document](Checkpoint2EDADataCleaning.ipynb). The [scripts](/scripts) directory contains notebooks with our full [univariate analysis](scripts/univariate_distributions_revised.ipynb) and [pairwise analysis](scripts/correlations_for_checkpoint.ipynb).
 
 ### Checkpoint 3: Modeling approach
 
-Please see [this document](Checkpoint3ModelingApproach.md) for an overview of our modeling approach. 
+<img src="figs/Fig3_Models.png" width="450">
+
+Please see [this document](Checkpoint3ModelingApproach.md) for an overview of our modeling approach.
 
 ## Repository Organization
 
 ### Root Directory
 
 The root directory of this repo contains four notebooks, containing our code for model selection and evaluation.
-* [model_comparison.ipynb](model_comparison.ipynb) contains our model-selection process. Each potential model is evaluated using five-fold cross-validation on the [training set](data/train_set.csv). 
+
+* [model_comparison.ipynb](model_comparison.ipynb) contains our model-selection process. Each potential model is evaluated using five-fold cross-validation on the [training set](data/train_set.csv).
 * [implementation.ipynb](implementation.ipynb) contains helper functions for creating and fitting pipelines and models.
 * [model_comparison_test_naive.ipynb](model_comparison_test_naive.ipynb) is a script for testing each model we considered on the [test data](data/test_validation_set.csv), using a simple preprocessing pipeline which imputes -1 for missing numerical values and "missing" string for missing categorical values.
 * [model_comparison_test_tuned.ipynb](model_comparison_test_tuned.ipynb) is a script for testing each model we considered on the test data, using a more complex preprocessing pipeline which uses KNN imputation and scales numerical variables.
@@ -37,7 +45,8 @@ Note: we selected a modeling approach based on cross-validation on the training 
 
 ### Data Directory
 
-The [data](/data) directory contains raw data for this project. 
+The [data](/data) directory contains raw data for this project.
+
 * [train.csv](/data/train.csv) is the full training dataset provided on Kaggle.com.
 * [train_set.csv](/data/train_set.csv) is the subset of [train.csv](/data/train.csv) we used as training data.
 * [test_validation_set.csv](/data/test_validation_set.csv) is the held-out data we used for final evaluation.
@@ -53,6 +62,4 @@ The [examples](/examples) directory contains scripts for various utility functio
 
 ### Scripts Directory
 
-The [scripts](/scripts) directory contains additional notebooks with our exploratory analysis, and experiments with individual models and proprocessing techniques on the training data. 
-
-
+The [scripts](/scripts) directory contains additional notebooks with our exploratory analysis, and experiments with individual models and proprocessing techniques on the training data.
