@@ -43,6 +43,8 @@ The root directory of this repo contains four notebooks, containing our code for
 
 Note: we selected a modeling approach based on cross-validation on the training set, before evaluating any model on the test set. The final metrics reported for this project are based on this chosen approach--not on the approach that performed best on test data!
 
+An conda environment for running these jupyter notebooks is collected in the file `erdos_sp25_post_hct_env.yml`. Note that this environment has been exported from a linux machine, and thus may need to modify for other operation systems.
+
 ### Data Directory
 
 The [data](/data) directory contains raw data for this project.
