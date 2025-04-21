@@ -35,7 +35,7 @@ In addition, these two class of models have their tree-based alteratives.
 * Specialized versions of these models have been developed for survival data.
   * For CPH model, this means $\log(h(t)) = \Gamma(\theta,p)$. (Ruibo: Not entirely sure if this is true.)
   * For AFT model, this means $\log(S(t)) = \Gamma(\theta,p) + Z$
-* Implemented in `scikit-survival` library.
+* Implemented in `XGBoost`, `CatBoost`, and `scikit-survival` libraries.
 
 #### Other Considerations
 
